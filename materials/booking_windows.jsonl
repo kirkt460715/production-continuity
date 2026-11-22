@@ -1,0 +1,14 @@
+{"id": "win0", "location": "外景乙", "start": "2025-04-19T00:00:00Z", "end": "2025-04-20T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win1", "location": "外景甲", "start": "2025-04-20T00:00:00Z", "end": "2025-04-21T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win2", "location": "外景乙", "start": "2025-04-21T00:00:00Z", "end": "2025-04-22T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win3", "location": "外景甲", "start": "2025-04-22T00:00:00Z", "end": "2025-04-23T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win4", "location": "外景乙", "start": "2025-04-23T00:00:00Z", "end": "2025-04-24T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win5", "location": "外景甲", "start": "2025-04-24T00:00:00Z", "end": "2025-04-25T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win6", "location": "外景乙", "start": "2025-04-25T00:00:00Z", "end": "2025-04-26T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win7", "location": "外景甲", "start": "2025-04-26T00:00:00Z", "end": "2025-04-27T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win8", "location": "外景乙", "start": "2025-04-27T00:00:00Z", "end": "2025-04-28T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win9", "location": "外景甲", "start": "2025-04-28T00:00:00Z", "end": "2025-04-29T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win10", "location": "外景乙", "start": "2025-04-29T00:00:00Z", "end": "2025-04-30T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win11", "location": "外景甲", "start": "2025-04-30T00:00:00Z", "end": "2025-05-01T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win12", "location": "外景乙", "start": "2025-05-01T00:00:00Z", "end": "2025-05-02T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}
+{"id": "win13", "location": "外景甲", "start": "2025-05-02T00:00:00Z", "end": "2025-05-03T00:00:00Z", "resources": ["r0", "r1", "r2", "r3", "r4"], "minutes": 240}

@@ -1,0 +1,326 @@
+{
+  "scenes": {
+    "description": "应交付戏段",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "facts": {
+        "type": "array",
+        "description": "需要表达的故事事实"
+      },
+      "due": {
+        "type": "string",
+        "description": "承诺交付日"
+      },
+      "setup": {
+        "type": "string",
+        "description": "镜头组织类型"
+      }
+    }
+  },
+  "resources": {
+    "description": "拍摄资源",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "kind": {
+        "type": "string",
+        "description": "演员、器材或服装"
+      },
+      "label": {
+        "type": "string",
+        "description": "中文名称"
+      }
+    }
+  },
+  "shots": {
+    "description": "可以取得的镜头及素材用途",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "scene": {
+        "type": "string",
+        "description": "戏段",
+        "ref": "scenes"
+      },
+      "facts": {
+        "type": "array",
+        "description": "可表达的故事事实"
+      },
+      "setup": {
+        "type": "string",
+        "description": "拍摄组织"
+      },
+      "resources": {
+        "type": "array",
+        "description": "所需资源",
+        "ref": "resources"
+      },
+      "minutes": {
+        "type": "number",
+        "description": "每次拍摄准备加作业分钟"
+      },
+      "location": {
+        "type": "string",
+        "description": "可拍场地"
+      }
+    }
+  },
+  "takes": {
+    "description": "已拍素材，不含选用答案",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "shot": {
+        "type": "string",
+        "description": "镜头",
+        "ref": "shots"
+      },
+      "filmed_at": {
+        "type": "string",
+        "description": "拍摄发生"
+      },
+      "known_at": {
+        "type": "string",
+        "description": "资料进入"
+      },
+      "costume": {
+        "type": "string",
+        "description": "服装状态"
+      },
+      "position": {
+        "type": "string",
+        "description": "人物机位"
+      },
+      "light_code": {
+        "type": "string",
+        "description": "已拍光照标签"
+      },
+      "duration": {
+        "type": "number",
+        "description": "素材秒数"
+      }
+    }
+  },
+  "reviews": {
+    "description": "画面、声音及场记独立复核",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "take": {
+        "type": "string",
+        "description": "素材",
+        "ref": "takes"
+      },
+      "role": {
+        "type": "string",
+        "description": "picture、sound 或 log"
+      },
+      "result": {
+        "type": "string",
+        "description": "pass、pending、reject"
+      },
+      "decided_at": {
+        "type": "string",
+        "description": "决定时点"
+      },
+      "known_at": {
+        "type": "string",
+        "description": "收到时点"
+      },
+      "supersedes": {
+        "type": "string",
+        "description": "撤回旧研判编号"
+      }
+    }
+  },
+  "joins": {
+    "description": "场记提供的实拍接续许可",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "before": {
+        "type": "string",
+        "description": "前条素材",
+        "ref": "takes"
+      },
+      "after": {
+        "type": "string",
+        "description": "后条素材",
+        "ref": "takes"
+      },
+      "allowed": {
+        "type": "boolean",
+        "description": "允许连续剪接"
+      },
+      "known_at": {
+        "type": "string",
+        "description": "判定可知"
+      }
+    }
+  },
+  "history": {
+    "description": "过去作业及未交齐观测，用于交付风险比较",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "setup": {
+        "type": "string",
+        "description": "拍摄组织类型"
+      },
+      "started_at": {
+        "type": "string",
+        "description": "开始作业"
+      },
+      "scheduled_minutes": {
+        "type": "number",
+        "description": "排定工时"
+      },
+      "actual_minutes": {
+        "type": "number",
+        "description": "实际工时，null 未交齐"
+      },
+      "take_count": {
+        "type": "number",
+        "description": "实拍条数"
+      },
+      "failed_reviews": {
+        "type": "number",
+        "description": "截至记录可知的不通过次数"
+      },
+      "priority": {
+        "type": "boolean",
+        "description": "是否优先送审"
+      },
+      "first_review_at": {
+        "type": "string",
+        "description": "首次复核时间"
+      },
+      "complete_at": {
+        "type": "string",
+        "description": "真正交齐时间，空为观察结束未交齐"
+      },
+      "observed_until": {
+        "type": "string",
+        "description": "最长观察日"
+      },
+      "known_at": {
+        "type": "string",
+        "description": "该记录当时可知"
+      }
+    }
+  },
+  "booking_windows": {
+    "description": "可预约的场地和人员窗口",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "location": {
+        "type": "string",
+        "description": "场地"
+      },
+      "start": {
+        "type": "string",
+        "description": "开始"
+      },
+      "end": {
+        "type": "string",
+        "description": "结束"
+      },
+      "resources": {
+        "type": "array",
+        "description": "能参与的资源",
+        "ref": "resources"
+      },
+      "minutes": {
+        "type": "number",
+        "description": "每日作业分钟"
+      }
+    }
+  },
+  "bookings": {
+    "description": "已确认及到截止转不可退的预约",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "resource": {
+        "type": "string",
+        "description": "资源",
+        "ref": "resources"
+      },
+      "location": {
+        "type": "string",
+        "description": "场地"
+      },
+      "start": {
+        "type": "string",
+        "description": "占用开始"
+      },
+      "end": {
+        "type": "string",
+        "description": "结束"
+      },
+      "kind": {
+        "type": "string",
+        "description": "confirmed 或 option"
+      },
+      "deadline": {
+        "type": "string",
+        "description": "备选到期"
+      },
+      "fee": {
+        "type": "number",
+        "description": "不可退金额分"
+      },
+      "known_at": {
+        "type": "string",
+        "description": "可知"
+      }
+    }
+  },
+  "reshoot_requests": {
+    "description": "制片收到的补拍意向，不表示已签准",
+    "fields": {
+      "id": {
+        "type": "string",
+        "description": "该表内稳定记录编号"
+      },
+      "scene": {
+        "type": "string",
+        "description": "戏段",
+        "ref": "scenes"
+      },
+      "shots": {
+        "type": "array",
+        "description": "希望补的镜头",
+        "ref": "shots"
+      },
+      "requested_at": {
+        "type": "string",
+        "description": "提出日"
+      },
+      "latest": {
+        "type": "string",
+        "description": "期望最晚完成日"
+      }
+    }
+  }
+}

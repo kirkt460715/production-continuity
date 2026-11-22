@@ -1,0 +1,2 @@
+{"id": "camera-option", "resource": "r3", "location": "外景乙", "start": "2025-04-22T00:00:00Z", "end": "2025-04-23T00:00:00Z", "kind": "option", "deadline": "2025-04-21T00:00:00Z", "fee": 8000, "known_at": "2025-04-12T00:00:00Z"}
+{"id": "actor-fixed", "resource": "r1", "location": "外景甲", "start": "2025-04-22T00:00:00Z", "end": "2025-04-24T00:00:00Z", "kind": "confirmed", "deadline": "2025-04-11T00:00:00Z", "fee": 12000, "known_at": "2025-04-11T00:00:00Z"}
